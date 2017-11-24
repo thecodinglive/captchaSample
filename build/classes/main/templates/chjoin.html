@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>captcha</title>
+    <script type="text/javascript" src="/webjars/jquery/3.1.0/jquery.min.js"></script>
+</head>
+<body>
+<img src="/ch" id="captchaImg" alt="captcha img"/>
+<input type="text" placeholder="보안문자를 입력하세요" name="captcha"/>
+<button id="refreshBtn">새로고침</button>
+<script type="text/javascript">
+$("#refreshBtn").click(refreshBtnHandler);
+
+function refreshBtnHandler(){
+    console.log('cccc');
+    $("#captchaImg").attr("src", "/ch?version"+ Math.random());
+}
+</script>
+</body>
+</html>
